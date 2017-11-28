@@ -64,8 +64,21 @@ bootRun {
     addResources = true
 }
 
+//Add setting for External config file location
+bootRun {
+    // external-config.yml is under application root folder
+    // Need to add external-config.yml to .gitignore file so it won't be pushed to GitHub
+    jvmArgs = ["-Dexternal.config.location=external-config.yml"]
+
+    // External-config.yml is under user HOME\.grails
+    // Need to set HOME enviroment variable in Windows
+    //jvmArgs = ["-Dexternal.config.location=${System.getenv('HOME')}\\.grails\\external-config.yml"]
+}
+//
+
 
 assets {
     minifyJs = true
     minifyCss = true
 }
+
