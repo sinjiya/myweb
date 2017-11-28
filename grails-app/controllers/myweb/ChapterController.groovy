@@ -16,7 +16,7 @@ class ChapterController {
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond chapterService.list(params), model:[chapterCount: chapterService.count()]
-        log.info("coming into Chapter .")
+        log.info("User visiting Chapter. List")
     }
 
     def show(Long id) {

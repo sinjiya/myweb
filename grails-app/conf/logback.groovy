@@ -32,7 +32,8 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
         }
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
-    //SJ: add INFO log for controllers
-    logger("controllers", INFO, ['STDOUT'], false)
+
+    //ADD an INFO type logger for
+    logger("myweb", INFO, ['STDOUT'], false)
 }
 root(ERROR, ['STDOUT'])
