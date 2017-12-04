@@ -34,8 +34,11 @@ class SetupService {
             println("ID: " + fields[0])
             chapter.seqNumber = fields[0].toInteger()
             chapter.title = fields[1]
-            chapter.content = fields.length == 3 ? fields[2] : null
+            //chapter.content = fields.length == 3 ? fields[2] : null
             if (fields.length == 3) {
+                if(new File("resources/chapter${fields[0]}.txt").exists ()){
+                    chapter.content = new File("resources/chapter${fields[0]}.txt").getText("UTF-8")
+                }
                 println(fields[2])
                 log.info(fields[2])
             }
